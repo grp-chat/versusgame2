@@ -516,7 +516,7 @@ function createNewRow(rowNum, userName, userId) {
     divCol1.style.padding = "10px";
     var label1 = divCol1.appendChild(document.createElement('h2'));
     label1.innerHTML = userId;
-    label1.style.width = "100px";
+    label1.style.width = "80px";
     //label1.style = "background:rgba(255, 255, 0, 0.3)"
     var span1 = label1.appendChild(document.createElement('span'));
     span1.setAttribute("id", userId + "span");
@@ -592,11 +592,12 @@ function createNewRow(rowNum, userName, userId) {
     if (team2.includes(userId)) {
         createDropList(userId, divCol4a, team2);
     }
+    divCol4a.style.visibility = "hidden";
 
     var divCol4b = divRow.appendChild(document.createElement('button'));
     divCol4b.className = "btn btn-success";
     divCol4b.setAttribute("id", userId + "givebtn");
-    divCol4b.innerHTML = "Btn1"
+    divCol4b.innerHTML = "1"
     if (userId != nickname) {
         divCol4b.disabled = true;
     }
@@ -621,7 +622,7 @@ function createNewRow(rowNum, userName, userId) {
     var divCol4c = divRow.appendChild(document.createElement('button'));
     divCol4c.className = "btn btn-danger";
     divCol4c.setAttribute("id", userId + "reqbtn");
-    divCol4c.innerHTML = "Btn2"
+    divCol4c.innerHTML = "2"
     if (userId != nickname) {
         divCol4c.disabled = true;
     }
