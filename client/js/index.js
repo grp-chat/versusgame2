@@ -596,13 +596,13 @@ function createNewRow(rowNum, userName, userId) {
     var divCol4b = divRow.appendChild(document.createElement('button'));
     divCol4b.className = "btn btn-success";
     divCol4b.setAttribute("id", userId + "givebtn");
-    divCol4b.innerHTML = "Give"
+    divCol4b.innerHTML = "Btn1"
     if (userId != nickname) {
         divCol4b.disabled = true;
     }
     divCol4b.addEventListener('click', function () {
         //GIVE  
-        if (userId === "LK" && LKWins <= 1) {
+        /* if (userId === "LK" && LKWins <= 1) {
             alert("You do not have enough life to give");
             divCol4b.disabled = true;
         };
@@ -614,14 +614,14 @@ function createNewRow(rowNum, userName, userId) {
         alert(userId + " has given 1 life to " + giveToId)
         sock.emit('give', { giveToId, userId});
         divCol4b.disabled = true;
-        }
-        
+        } */
+        divCol4b.disabled = true;
     });
 
     var divCol4c = divRow.appendChild(document.createElement('button'));
     divCol4c.className = "btn btn-danger";
     divCol4c.setAttribute("id", userId + "reqbtn");
-    divCol4c.innerHTML = "Request"
+    divCol4c.innerHTML = "Btn2"
     if (userId != nickname) {
         divCol4c.disabled = true;
     }
