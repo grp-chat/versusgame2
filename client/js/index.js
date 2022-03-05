@@ -8,7 +8,7 @@ var userName = "Aum";
 var userId = "AA";
 var userName2 = "Julie ";
 var userId2 = "NN";
-var dummy = ""
+
 
 /* var userId3 = "LK";
 var userId4 = "LXR";
