@@ -161,37 +161,72 @@ io.on('connection', (sock) => {
     });
 
     sock.on('give', (data) => {
-        if (data.userId === "AA") {
-            aumWins--;
-        }
-        if (data.userId === "NN") {
-            ninaWins--;
-        }
+        
         if (data.userId === "LK") {
             LKWins--;
             if (data.giveToId === "JHA") {
                 JHAWins++
             }
-            if (data.giveToId === "JL") {
-                JLWins++
+            if (data.giveToId === "SZF") {
+                SZFWins++
             }
         }
         if (data.userId === "LXR") {
             LXRWins--;
+            if (data.giveToId === "TJY") {
+                TJYWins++
+            }
+            if (data.giveToId === "JL") {
+                JLWins++
+            }
         }
         if (data.userId === "JHA") {
             JHAWins--;
+            if (data.giveToId === "LK") {
+                LKWins++
+            }
+            if (data.giveToId === "SZF") {
+                SZFWins++
+            }
         }
         if (data.userId === "SZF") {
             SZFWins--;
+            if (data.giveToId === "LK") {
+                LKWins++
+            }
+            if (data.giveToId === "JHA") {
+                JHAWins++
+            }
         }
         if (data.userId === "JL") {
             JLWins--;
+            if (data.giveToId === "TJY") {
+                TJYWins++
+            }
+            if (data.giveToId === "LXR") {
+                LXRWins++
+            }
         }
         if (data.userId === "TJY") {
             TJYWins--;
+            if (data.giveToId === "LXR") {
+                LXRWins++
+            }
+            if (data.giveToId === "JL") {
+                JLWins++
+            }
         }
+        var giverId = data.userId
+        var receiverId = data.giveToId
+        io.emit("lifegained", { giverId, receiverId });
     });
+
+    sock.on('requestlife', (data) => {   
+        var requesterId = data.nickname;
+        var requestToId = data.requestToId;
+        io.emit('sendrequest', { requesterId, requestToId });
+        
+});
 
 
     sock.on('minusWin', (data) => {
