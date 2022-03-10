@@ -1,6 +1,7 @@
 
 const sock = io();
 //let newLine = createNewLine();
+var rotation = 1;
 var roundNum = 1;
 var wordRow = "row";
 var rowNum = 1;
@@ -471,6 +472,9 @@ sock.on('sendchallenge', data => {
 });
 
 sock.on('refreshall', data => {
+    changeBackground(rotation);
+    rotation++;
+    if (rotation >= 13) {rotation = 1};
     lifeGiven = 0;
     roundNum = data;
     theRound.innerHTML = "VS Mode - Round" + roundNum;
@@ -541,6 +545,7 @@ function createNewRow(rowNum, userName, userId) {
     var label1 = divCol1.appendChild(document.createElement('h2'));
     label1.innerHTML = userId;
     label1.style.width = "80px";
+    label1.style.color = "mediumblue";
     //label1.style = "background:rgba(255, 255, 0, 0.3)"
     var span1 = label1.appendChild(document.createElement('span'));
     span1.setAttribute("id", userId + "span");
@@ -1064,6 +1069,48 @@ function createDropList(userId, elToApply, teamNum) {
 
     elToApply.appendChild(listLabel).appendChild(select);
 }
+
+function changeBackground(rotation) {
+    if (rotation === 2) {
+        var url = 'https://cdnb.artstation.com/p/assets/images/images/014/324/815/large/chris-kesler-1.jpg?1543495968';
+        document.body.style.backgroundImage = "url(" + url + ")";
+        document.body.style.backgroundSize = "1750px";
+    }
+
+    if (rotation === 4) {
+        url = 'https://www.awn.com/sites/default/files/styles/original/public/image/attached/1046374-anf3740compv0081020cc-lr.jpg?itok=Pf44ptMv';
+        document.body.style.backgroundImage = "url(" + url + ")";
+        document.body.style.backgroundSize = "1500px";
+    }
+
+    if (rotation === 6) {
+        url = 'https://www.teahub.io/photos/full/94-945045_marvel-comic-space-backgrounds.jpg';
+        document.body.style.backgroundImage = "url(" + url + ")";
+        
+    }
+
+    if (rotation === 8) {
+        url = 'https://m.media-amazon.com/images/M/MV5BOTg0ODU3ODY2NF5BMl5BanBnXkFtZTgwMTg4MjkzNTM@._V1_.jpg';
+        document.body.style.backgroundImage = "url(" + url + ")";
+    }
+
+    if (rotation === 10) {
+        url = 'https://lumiere-a.akamaihd.net/v1/images/g_avengers_infinitywar_05_54868e20.jpeg?region=0%2C0%2C1200%2C560';
+        document.body.style.backgroundImage = "url(" + url + ")";
+    }
+
+    if (rotation === 12) {
+        url = 'https://hips.hearstapps.com/digitalspyuk.cdnds.net/16/02/1452510174-movies-thanos-infinity-gauntlet-marvel-cinematic-universe.jpg';
+        document.body.style.backgroundImage = "url(" + url + ")";
+        document.body.style.backgroundSize = "1700px";
+    }
+
+    
+
+    
+    
+    
+ }
 
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
