@@ -126,7 +126,7 @@ sock.emit('newuser', nickname);
 //++++++++++++++++++++++++++++++++++++++++ DOCUMENT OBJECT METHOD UPDATE +++++++++++++++++++++++++++++++++++
 
 var theRound = document.getElementById("h1");
-theRound.innerHTML = "VS Mode - Round" + roundNum;
+theRound.innerHTML = "Infinity War - Round" + roundNum;
 document.body.appendChild(createContainerFluid());
 
 let mainDiv = document.getElementById("maindiv");
