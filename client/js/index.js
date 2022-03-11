@@ -477,7 +477,7 @@ sock.on('refreshall', data => {
     if (rotation >= 13) {rotation = 1};
     lifeGiven = 0;
     roundNum = data;
-    theRound.innerHTML = "VS Mode - Round" + roundNum;
+    theRound.innerHTML = "Infinity War - Round" + roundNum;
     var refreshIt = document.getElementById(nickname + "submitbtn");
     if (nickname != "TCR") {
         refreshIt.disabled = false;
